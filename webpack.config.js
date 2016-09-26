@@ -34,13 +34,14 @@ module.exports = {
         path: __dirname,
         filename: 'build/[name].js',
         chunkFilename: '[name].js',
-        publicPath:'/build'
+        publicPath:'/build/'
     },
     module: {
         //加载器配置
         loaders: [
             { test: /\.(css|less|scss)$/, loader: ExtractTextPlugin.extract('style', 'css!less!sass') },
-            { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' },
+            { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192&name=build/[name].[ext]' },
+            //{ test: /\.(png|jpg)$/, loader: 'file-loader?name=build/[hash:8].[name].[ext]' },
             { test: /\.(js|jsx?)$/, exclude: /node_modules/, loaders: ['react-hot-loader/webpack','babel-loader'] }
         ]
     },

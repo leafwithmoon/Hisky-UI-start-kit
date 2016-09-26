@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "webpack -p",
+    "deploy": "webpack -p --config webpack-deploy.config.js",
     "start": "node server.js && webpack --watch --progress --colors --display-error-details"
   },
   "repository": {
@@ -30,6 +30,7 @@
     "babel-polyfill": "^6.13.0",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
+    "clean-webpack-plugin": "^0.1.10",
     "css-loader": "^0.25.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",

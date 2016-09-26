@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlwebpackPlugin = require('html-webpack-plugin');
+var CleanPlugin = require('clean-webpack-plugin');
 
 console.log('begin to webpack the project... ')
 module.exports = {
@@ -10,6 +11,11 @@ module.exports = {
         names:'index'
       }),
       new ExtractTextPlugin('index.css'),
+      new CleanPlugin(['build'], {                //清空输出目录
+         root: __dirname,
+         verbose: true,
+         dry: false
+     }),
       new HtmlwebpackPlugin({                        //根据模板插入css/js等生成最终HTML
        favicon:'./src/img/favicon.ico', //favicon路径
        filename:'./index.html',    //生成的html存放路径，相对于 path
@@ -36,7 +42,7 @@ module.exports = {
         //加载器配置
         loaders: [
             { test: /\.(css|less|scss)$/, loader: ExtractTextPlugin.extract('style', 'css!less!sass') },
-            { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' },
+            { test: /\.(png|jpg)$/, loader:  'url-loader?limit=8192&name=build/[name].[ext]'  },
             { test: /\.(js|jsx?)$/, exclude: /node_modules/, loader: 'babel-loader' }
         ]
     },

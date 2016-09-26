@@ -1,16 +1,16 @@
 {
   "name": "hisky",
   "version": "1.0.0",
-  "description": "react+redux+react-router+webpack+webpack-hrm+koa",
+  "description": "react+react-router+webpack+react-hot-loader",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "webpack -p",
-    "start": "webpack --watch --display-error-details"
+    "start": "webpack --watch --display-error-details --colors --progress"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leafwit  hmoon/Hisky-UI-start-kit.git"
+    "url": "git+https://github.com/leafwithmoon/Hisky-UI-start-kit.git"
   },
   "author": "Hisky",
   "license": "MIT",

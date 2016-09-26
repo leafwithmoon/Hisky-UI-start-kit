@@ -2,7 +2,7 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlwebpackPlugin = require('html-webpack-plugin');
 
-
+console.log('begin to webpack the project... ')
 module.exports = {
     //插件项
     plugins: [

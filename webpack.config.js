@@ -4,6 +4,7 @@ var HtmlwebpackPlugin = require('html-webpack-plugin');
 
 
 module.exports = {
+
     //插件项
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
